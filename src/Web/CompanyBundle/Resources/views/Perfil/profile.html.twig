@@ -1,0 +1,23 @@
+
+{% extends "::frontend.html.twig" %}
+
+{% block id 'usuario' %}
+{% block title %}Ver / Modificar mis datos{% endblock %}
+{% block nav %}
+{% include ':includes:destacada.html.twig' %}
+{% endblock%}
+{% block article %}
+<div class="portada">
+{% if app.session.hasFlash('info') %}
+             <p class="info">{{ app.session.getFlash('info') }}</p>
+             {% endif %} 
+<form action="{{ path('WebCompanyBundle_perfil') }}" method="post" {{ form_enctype(formulario) }}>
+    <div class="errors">
+        {{ form_errors(formulario) }}
+    </div>
+
+    {{ form_rest(formulario) }}
+    <input  type="submit" class="btn btn-primary" value="{% trans %}Guardar cambios{% endtrans %}" />
+</form>
+    </div>
+{% endblock %}

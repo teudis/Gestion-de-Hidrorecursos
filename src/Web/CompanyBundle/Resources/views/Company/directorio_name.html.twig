@@ -1,0 +1,21 @@
+{% extends "::frontend.html.twig" %}
+
+{% block title %}{% trans %}Directorio{% endtrans %}{% endblock %}
+{% block id 'datos' %}
+{% block nav %}
+{% include ':includes:destacada.html.twig' %}
+{% endblock%}
+{% block article %}
+<div class="portada">
+
+    <h2>{% trans %}Directorio{% endtrans %}</h2>
+        {% include ':includes:buscador.html.twig' %}
+        <br/>
+        <h4>{% trans %}Resultados{% endtrans %}</h4>
+        {% for c in company %}
+   <a style="color:#0055cc; font-size: 20px;"  href="{{ path('WebCompanyBundle_show_company_all', { 'id': c.id })}}"> 
+    {{ c.name }}</a> 
+        <br/>
+{% endfor %}
+</div>      
+{% endblock %}

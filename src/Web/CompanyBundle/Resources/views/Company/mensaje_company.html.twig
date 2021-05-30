@@ -1,0 +1,18 @@
+{% extends "::frontend.html.twig" %}
+
+{% block id 'listado' %}
+{% block title %}Company Created{% endblock %}
+{% block nav %}
+{% include ':includes:destacada.html.twig' %}
+{% endblock%}
+
+{% block article %}
+<div class="portada">
+<h4>{% trans %}Company Created!!{% endtrans %}</h4>
+
+ Your company right now is in the queue, an administrator will review your information to see if they qualify to participate in our program.Once approved, your company will receive an email with all the details.
+   
+   <br/>
+   Thanks
+</div>
+{% endblock %}

@@ -1,0 +1,12 @@
+{% form_theme form theme %}
+
+<form action="{{ path('fos_user_registration_register') }}" {{ form_enctype(form) }} method="POST" class="fos_user_registration_register">
+    {{ form_widget(form) }}
+    <div>
+        <input type="submit" class="btn btn-primary" value="{{ 'registration.submit'|trans({}, 'FOSUserBundle') }}" />
+    </div>
+    <br/>
+    <br/>
+    <a href="{{ path('WebCompanyBundle_resseting') }}">Did you forget your password?</a>
+</form>
+

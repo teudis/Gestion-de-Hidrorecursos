@@ -1,0 +1,26 @@
+{% extends "::frontend.html.twig" %}
+
+{% block id 'listado' %}
+{% block title %}Listado Empresa{% endblock %}
+{% block nav %}
+<h1>Categories</h1>
+{% include ':includes:destacada.html.twig' %}
+{% endblock%}
+{% block article %}
+<div class="portada">
+<h1>Categories</h1>
+
+
+
+{% include ':includes:sortcategory.html.twig' %}
+
+<div class="row-fluid">
+    <div class="span6">
+    {% for emp in empCat %}
+        <h4><a style="color:#0055cc; font-size: 20px;"  href="{{ path('WebCompanyBundle_show_company_all', { 'id': emp.company.id })}}"> 
+    {{ emp.company.name }}</a></h4>
+    {% endfor %}
+    </div>
+</div>
+</div>
+{% endblock%}

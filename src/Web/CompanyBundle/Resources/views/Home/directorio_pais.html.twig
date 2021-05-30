@@ -1,0 +1,23 @@
+{# src/Dev/SkillsBundle/Resources/views/layout.html.twig #}
+
+{% extends "::frontend.html.twig" %}
+
+{% block title %} {% trans %}Directorio{% endtrans %} {% endblock %}
+{% block id 'pais' %}
+{% block nav %}
+{% include ':includes:destacada.html.twig' %}
+{% endblock%}
+{% block article %}
+<div class="portada">
+    <h1>{% trans %}Directorio{% endtrans %}</h1>
+
+    {% include ':includes:buscador.html.twig' %}
+        <br/>
+   <h4>{% trans %}Resultados{% endtrans %}</h4>
+{% for p in pais %}
+   <a style="color:#0055cc; font-size: 20px;" href="{{ path('WebCompanyBundle_show_company_all', { 'id': p.id }) }}"> 
+{{ p.name }}</a> 
+<br/>
+{% endfor %}
+  </div>      
+{% endblock %}

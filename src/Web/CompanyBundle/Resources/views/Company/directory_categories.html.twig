@@ -1,0 +1,26 @@
+{# src/Dev/SkillsBundle/Resources/views/layout.html.twig #}
+
+{% extends "::frontend.html.twig" %}
+
+{% block title %} {% trans %}Directorio {% endtrans %}{% endblock %}
+{% block id 'buscador' %}
+{% block nav %}
+{% include ':includes:destacada.html.twig' %}
+{% endblock%}
+{% block article %}
+<div class="portada">
+<h1>Categories</h1>
+
+{% include ':includes:sortcategory.html.twig' %}
+    <h4>{% trans %}Resultados{% endtrans %}</h4>
+        {% for c in company %}  
+            {% if c.name | letter == letra or c.name | letter == letra|lower %}
+                <a style="color:#0055cc; font-size: 20px;"  
+                href="{{ path('WebCompanyBundle_search_product', { 'id': c.id }) }}"> 
+                {{ c.name }}</a> 
+   <br/>
+   
+            {% endif %}
+        {% endfor %}
+</div>
+{% endblock %}

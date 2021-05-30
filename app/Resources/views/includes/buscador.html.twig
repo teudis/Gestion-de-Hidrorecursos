@@ -1,0 +1,11 @@
+<form class="well form-search" action="{{ path('WebCompanyBundle_search_name') }}" method="post">
+    <label>{% trans %} Nombre de Empresa {% endtrans %} </label>
+    <input type="text" class="input-medium search-query" name="nombre">
+  <button type="submit" class="btn">{% trans %} Buscar{% endtrans %} </button>
+</form>
+<br/>
+<h4>{% trans %}Orden Alfabetico{% endtrans %}</h4>
+{% for letras in 'A'..'Z' %}
+<a style="color:#0055cc; font-size: 20px;"  href="{{ path('WebCompanyBundle_search_letra', { 'letter': letras }) }}">
+ {{ letras }}</a> &nbsp;
+{% endfor %}

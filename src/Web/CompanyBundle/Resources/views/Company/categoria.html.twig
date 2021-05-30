@@ -1,0 +1,24 @@
+{% extends "::frontend.html.twig" %}
+
+{% block id 'listado' %}
+{% block title %}Listado Empresa{% endblock %}
+{% block nav %}
+{% include ':includes:destacada.html.twig' %}
+{% endblock%}
+{% block article %}
+<div class="portada">
+<h1>Categories</h1>
+
+{% include ':includes:sortcategory.html.twig' %}
+
+<br/>
+{% for category in categories %}
+
+<a style="color:#0055cc; font-size: 14px;"  href="{{ path('WebCompanyBundle_search_product', { 'id': category.id }) }}"> 
+ {{ category.name}} </a> 
+        
+        <br/>
+
+{%endfor%}
+</div>
+{% endblock%}

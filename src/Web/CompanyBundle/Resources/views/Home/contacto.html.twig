@@ -1,0 +1,33 @@
+{# src/Dev/SkillsBundle/Resources/views/layout.html.twig #}
+
+{% extends "::frontend.html.twig" %}
+
+{% block title %} Company's Online {% endblock %}
+{% block id 'contacto' %}
+{% block nav %} 
+{% include ':includes:destacada.html.twig' %}
+{%endblock%}
+{% block article %}
+<div class="portada">
+    <h1> {% trans %}Contacto {% endtrans %}</h1>
+        
+       {% if app.session.hasFlash('info') %}
+             <p class="info">{{ app.session.getFlash('info') }}</p>
+             {% endif %} 
+    <form action="{{ path('WebCompanyBundle_contact') }}" method="post" {{ form_enctype(formulario) }}>
+        {{ form_errors(formulario) }}
+        
+        <div>
+            {{ form_label(formulario.remitente, 'Tu dirección de email') }}
+            {{ form_errors(formulario.remitente) }}
+            {{ form_widget(formulario.remitente) }}
+        </div>
+        
+        {{ form_row(formulario.mensaje) }}
+        
+        {{ form_rest(formulario) }}
+        
+        <input type="submit"  class="btn btn-primary" value=" {% trans %}Enviar mensaje {% endtrans %}" />
+    </form>
+</div>
+{% endblock %}

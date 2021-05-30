@@ -1,0 +1,7 @@
+
+<a href="{{path('WebCompanyBundle_categoria')}}">Company Category</a>
+<h4>{% trans %}Orden Alfabetico{% endtrans %}</h4>
+{% for letras in 'A'..'Z' %}
+<a style="color:#0055cc; font-size: 20px;"  href="{{ path('WebCompanyBundle_search_letter_categetory', { 'letter': letras }) }}">
+ {{ letras }}</a> &nbsp;
+{% endfor %}

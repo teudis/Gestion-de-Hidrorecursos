@@ -1,0 +1,222 @@
+
+{% extends '::base.html.twig' %}
+
+{% block stylesheets %}
+    <link href="{{asset('bundles/webcompany/css/portada.css')}}" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="{{asset('bundles/webcompany/js/jquery.js')}}"></script>    
+    <script type="text/javascript" src="{{asset('bundles/webcompany/js/bootstrap.min.js') }}"></script>
+    <script type="text/javascript" src="{{asset('bundles/webcompany/js/bootstrap-carousel.js') }}"></script>
+    <script type="text/javascript" src="{{asset('bundles/webcompany/js/bootstrap-transition.js') }}"></script>
+{% endblock %}
+    
+{% block body %}
+<div class="cuerpo">  
+    <header>
+        <div class="navbar navbar-inverse navbar-fixed-top">
+          <div class="navbar-inner">
+            <div class="container">
+              <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </a>
+              <a class="brand" href="{{ path ('homepage') }}">HidroRecursos</a>
+
+              <div class="nav-collapse collapse">
+
+                <ul class="nav">
+                  <li><a href="{{ path ('homepage') }}"><i class="icon-home icon-white"></i> {% trans %}Inicio {% endtrans %}</a></li>
+                  <li><a href="{{ path ('WebCompanyBundle_contact') }}"><i class="icon-envelope icon-white"></i> {% trans %}Contacto{% endtrans %}</a></li>
+                  <li><a href="{{ path ('WebCompanyBundle_directorio')}}"><i class="icon-search icon-white"></i> {% trans %} Directorio {% endtrans %}</a></li>
+                   {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                  <li></li>
+                {% else %}
+                    <li><a href="{{ path ('WebCompanyBundle_registro')}}"><i class="icon-user icon-white"></i> {% trans %}Registrarse{% endtrans %}</a></li>
+                {% endif %}
+                </ul>
+               
+                  <div class="pull-right">
+                {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                        
+                          <a class="brand">
+                     {{ 'layout.logged_in_as'|trans({'%username%': app.user.username}, 'FOSUserBundle') }}
+                   </a>
+                    <a class="brand" href="{{ path('fos_user_security_logout') }}"> 
+                        {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}
+                    </a>
+                  
+                {% else %}
+                    {#{ path('fos_user_security_login') }#}
+                   <a class="brand" href="#myModal" data-toggle="modal">{{ 'layout.login'|trans({}, 'FOSUserBundle') }}</a>               
+
+                {% endif %}
+            </div>
+              </div><!--/.nav-collapse -->
+            </div>
+          </div>
+        </div>   
+    </header>
+{% include 'WebCompanyBundle:Frontend:ventanaLogin.html.twig' %}        
+
+    <nav>
+        {% block nav_superior %}
+      <div class="portada">
+          <div class="row-fluid">
+              <div class="span3">
+              
+                    <a class="brand" href="{{ path('homepage') }}"> 
+                   <img src="{{ asset(directorio_imagenes ~ 'hidro.gif') }}"> 
+                  </a>
+                  
+                  <div style="margin-top: 10px;">
+        <form class="form-search" action="{{ path('WebCompanyBundle_search_name') }}" method="post">   
+    <div class="input-prepend">
+                                         
+            
+    </div>  
+</form>
+ </div>
+             
+              </div>
+              <div class="span7">
+                 
+                  <div class="texto-portada">
+                      <p>
+                          Welcome to the Sweets building product resource center for signage. This resource center is designed to meet the needs of architects and design professionals who are researching, comparing, selecting and specifying signage...(more/feedback).  
+                               
+                      </p> 
+                  
+                       <p>
+                       {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                       <a class="btn btn-primary btn-medium" href="{{ path('WebCompanyBundle_crear_company') }}">
+                        Register your company
+                      </a>
+                       {%else%}
+
+                       <a class="btn btn-primary  btn-medium" href="{{ path('WebCompanyBundle_registro') }}">
+                        Register your company
+                      </a>
+
+                       {%endif%}
+                       <p/>
+
+                  </div>
+              </div>
+              <div class="span2 pull-left">
+                  <div class="portada-der">
+                     {#{% set locale = app.request.session.locale %}
+                     {% if locale == 'es' %}
+                          <img src="{{asset('bundles/webcompany/images/en_US.png')}}"> 
+                          <a href="#">English</a>
+                     {% else %}
+                          <img src="{{asset('bundles/webcompany/images/es_ES.png')}}"> 
+                          <a href="#">Español</a>
+                     {% endif %} #}
+                              
+                     
+                  </div>
+
+              </div>
+
+
+         </div><!--row-fluid -->
+     </div>
+        {% endblock %}
+    </nav>
+        <div class="row-fluid">    
+            <div class="span4">
+    <nav>
+        {% block nav %}
+            <div class="">
+          <div class="well sidebar-nav">
+            <ul class="nav nav-list">
+              
+              <li class="nav-header">HidroRecursos</li> 
+               
+              <li>
+                  
+                   {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                 <a  href="{{ path ('WebCompanyBundle_allcompany')}}">
+            	<span class="label label-success">Click here to Get List!</span>
+                 </a>
+                  
+                 {% else %}
+                  <a  href="{{  path ('WebCompanyBundle_registro')}}">
+            	<span class="label label-success">Click here to Get List!</span>
+                 </a>
+                  {%endif%}
+                  
+                  
+              </li>
+              {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                <li class="nav-header">{% trans %}Mi Cuenta{% endtrans %}</li>
+                <li> <a href="{{ path ('WebCompanyBundle_perfil')}}">{% trans %}Mi Perfil{% endtrans %}</a></li>
+                <li class="nav-header">Empresas</li>
+                <li><a href="{{ path('WebCompanyBundle_crear_company') }}">{%trans %}Crear Empresas{% endtrans %}</a></li>
+                <li><a href="{{ path('WebCompanyBundle_listado_company')}}">{%trans %}Listado Empresas{% endtrans %}</a></li>                 
+              
+              {% endif %}
+              <li class="nav-header">Empresas destacadas</li>             
+              <li class="active"><a href="#">GEARH</a></li>
+              <li><a href="#">GEAAL</a></li>
+              <li><a href="{{ path('homepage') }}">Link</a></li>
+              <li><a href="#">Link</a></li>
+              <li><a href="#">Link</a></li>
+              <li class="nav-header">Search by </li>
+              <li><a href="{{path('WebCompanyBundle_categoria')}}">Company Category</a></li>            
+            </ul>
+          </div><!--/.well -->
+        {% endblock %}
+    </nav>
+            </div><!--/span-->  
+    <div class="span8">
+        <article>
+              {% block article %} {% endblock %} 
+        </article>
+        <article>
+            {% block fos_user_content %}{% endblock%}
+        </article>
+    </div>
+
+    </div><!--/row-fluid-->
+  
+</div> <!-- cuerpo -->
+<nav>
+    {% block patrocinador %}
+        <div class="patrocinadores">
+        <div class="row-fluid offset2">
+            <div class="span6">
+            <div class="span4"><a href="#"><img src=" {{ asset(directorio_imagenes ~ 'solu.png') }} "></a></div>
+            <div class="span4"><a href="#"><img src=" {{ asset(directorio_imagenes ~ 'aci.png') }} "></a></div>
+            <div class="span4"><a href="#"><img src=" {{ asset(directorio_imagenes ~ 'siu.png') }} "></a></div>
+            </div>
+       </div>
+       </div>
+        
+    {% endblock %}
+</nav>
+
+{% block javascripts %}
+<!-- Bolque de codigo js para mover el carrusel cada 4 seg -->
+    
+
+    <script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = 
+
+"//connect.facebook.net/en_US/all.js#xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 
+
+'facebook-jssdk'));</script>
+{% endblock %}
+    
+{% endblock %}
+
+    
+    
+    
+
+

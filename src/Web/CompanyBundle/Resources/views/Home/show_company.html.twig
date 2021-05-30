@@ -1,0 +1,48 @@
+
+{% extends "::frontend.html.twig" %}
+
+{% block title %}Datos Empresa{% endblock %}
+{% block id 'datos' %}
+{% block nav %}
+{% include ':includes:destacada.html.twig' %}
+{% endblock%}
+{% block article %}
+<div class="portada">
+<h1>Directorio</h1>
+	
+{% include ':includes:buscador.html.twig' %}
+   <br/><br/>
+   <h3>{% trans %}Datos de la Empresa{% endtrans %}</h3>
+   <div class="row-fluid">
+        <div class="span2"><div class="pull-right"><strong>{% trans %}Nombre{% endtrans %}:</strong></div></div>
+        <div class="span10">{{ entity.name }}</div>
+   </div>
+  
+   <div class="row-fluid">
+        <div class="span2"><div class="pull-right"><strong>{% trans %}Descripcion{% endtrans %}:</strong></div></div>
+        <div class="span10">{{ entity.description }}</div>
+   </div>
+   
+   {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+   <p>
+     <div class="row-fluid">
+        <div class="span2"><div class="pull-right"><strong>{% trans %}Pais{% endtrans %}:</strong></div></div>
+        <div class="span10">{{ entity.country }}</div>
+   </div>
+   <div class="row-fluid">
+        <div class="span2"><div class="pull-right"><strong>Email:</strong></div></div>
+        <div class="span10">{{ entity.email }}</div>
+   </div>
+      
+       
+    <div class="row-fluid">
+        <div class="span2"><div class="pull-right"><strong>{% trans %}Web Site{% endtrans %}</strong></div></div>
+        <div class="span10">{{ entity.website }}</div>
+   </div>
+   </p>
+  
+   
+   {% endif %}
+   
+</div>
+{% endblock %}

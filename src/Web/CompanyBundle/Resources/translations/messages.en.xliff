@@ -1,0 +1,190 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="es" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="1">
+                <source>Inicio</source>
+                <target>Home</target>
+            </trans-unit>
+            <trans-unit id="2">
+                <source>Contacto</source>
+                <target>Contact</target>
+            </trans-unit>
+            <trans-unit id="3">
+                <source>Directorio</source>
+                <target>Directory</target>
+            </trans-unit>
+            
+            <trans-unit id="4">
+                <source>Registrarse</source>
+                <target>Register</target>
+            </trans-unit>
+            
+            <trans-unit id="5">
+                <source> Mi Cuenta</source>
+                <target>My account</target>
+            </trans-unit>
+            
+            <trans-unit id="6">
+                <source>Mi Perfil</source>
+                <target>My Profile</target>
+            </trans-unit>
+            
+            <trans-unit id="7">
+                <source> Empresas </source>
+                <target>Company's</target>
+            </trans-unit>
+            
+            <trans-unit id="8">
+                <source>Adicionar Empresa</source>
+                <target>Add Company</target>
+            </trans-unit>
+            
+            <trans-unit id="9">
+                <source>Nombre Completo</source>
+                <target>Full Name</target>
+            </trans-unit>
+            
+            <trans-unit id="10">
+                <source>Nombre</source>
+                <target>Name</target>
+            </trans-unit>
+            
+            <trans-unit id="11">
+                <source>Apellidos</source>
+                <target>First Name</target>
+            </trans-unit>
+            
+             <trans-unit id="12">
+                <source>Apellidos</source>
+                <target>First Name</target>
+            </trans-unit>
+            
+             <trans-unit id="13">
+                <source>Sitio Web</source>
+                <target>Web Site</target>
+            </trans-unit>
+            
+            <trans-unit id="14">
+                <source>Telefono</source>
+                <target>Phone</target>
+            </trans-unit>
+            
+            <trans-unit id="15">
+                <source>Contraseña</source>
+                <target>Password</target>
+            </trans-unit>
+            
+            <trans-unit id="16">
+                <source>Guardar cambios</source>
+                <target>Save Change</target>
+            </trans-unit>
+            
+            <trans-unit id="17">
+                <source>Nombre de Empresa</source>
+                <target>Name's Company</target>
+            </trans-unit>
+            
+            
+             <trans-unit id="18">
+                <source>Pais</source>
+                <target>Country</target>
+            </trans-unit>
+            
+             <trans-unit id="19">
+                <source>Tipo de producto</source>
+                <target>Type of product</target>
+            </trans-unit>
+            
+            
+             <trans-unit id="20">
+                <source>Descripcion</source>
+                <target>Description</target>
+            </trans-unit>
+            
+            
+             <trans-unit id="21">
+                <source>Direccion</source>
+                <target>Address</target>
+            </trans-unit>
+            
+             <trans-unit id="22">
+                <source>Creada</source>
+                <target>Created</target>
+            </trans-unit>
+            
+            <trans-unit id="23">
+                <source>Listado Empresas</source>
+                <target>My Company's</target>
+            </trans-unit>  
+            
+           <trans-unit id="24">
+                <source>Crear Empresa</source>
+                <target>Create Company</target>
+            </trans-unit> 
+            
+              <trans-unit id="25">
+                <source>Acciones</source>
+                <target>Actions</target>
+            </trans-unit>   
+              <trans-unit id="26">
+                <source>Tu dirección de email</source>
+                <target>Your email</target>
+            </trans-unit> 
+            <trans-unit id="27">
+                <source>Mensaje</source>
+                <target>Message</target>
+            </trans-unit> 
+
+             <trans-unit id="28">
+                <source>Enviar mensaje</source>
+                <target>Send message</target>
+            </trans-unit> 
+            <trans-unit id="29">
+                <source>Buscar</source>
+                <target>Search</target>
+            </trans-unit> 
+            <trans-unit id="30">
+                <source>Orden Alfabetico</source>
+                <target>Search by Letter</target>
+            </trans-unit> 
+             <trans-unit id="31">
+                <source>Por Pais</source>
+                <target>Search by Country</target>
+            </trans-unit> 
+
+            <trans-unit id="32">
+                <source>Crear Empresas</source>
+                <target>Add Company</target>
+            </trans-unit>
+
+            <trans-unit id="33">
+                <source>Listado de empresas</source>
+                <target>List Company</target>
+            </trans-unit>
+            <trans-unit id="34">
+                <source> Fecha de creada</source>
+                <target>Created</target>
+            </trans-unit>
+            <trans-unit id="35">
+                <source>Datos de la Empresa</source>
+                <target>Company's Data</target>
+            </trans-unit>
+            <trans-unit id="36">
+                <source>Resultados</source>
+                <target>Results</target>
+            </trans-unit>
+            <trans-unit id="37">
+                <source>Las mejores empresas del mundo</source>
+                <target>The best Companys</target>
+            </trans-unit>
+
+            <trans-unit id="38">
+                <source>Acceder</source>
+                <target>Enter</target>
+            </trans-unit>
+       
+            
+        </body>
+    </file>
+</xliff>

@@ -1,0 +1,47 @@
+{% extends "::frontend.html.twig" %}
+
+{% block id 'listado' %}
+{% block title %}Listado Empresa{% endblock %}
+{% block nav %}
+{% include ':includes:destacada.html.twig' %}
+{% endblock%}
+
+{% block article %}
+<div class="portada">
+<h2>{% trans %}Listado de empresas{% endtrans %}</h2>
+
+ <table class="table table-striped table-bordered table-condensed">
+    <thead>
+    <tr>
+    <th>{% trans %}Nombre{% endtrans %}</th>
+    <th>{% trans %}Pais{% endtrans %}</th>
+    <th>{% trans %}Sitio Web{% endtrans %}</th>
+    <th>{% trans %}Acciones{% endtrans %}</th>
+    </tr>
+    </thead>
+    <tbody
+     {% for empresa in empresas %}
+    <tr>
+   <td>{{ empresa.name }}</td>
+    <td>{{ empresa.country }}</td>
+    <td>{{ empresa.webSite }}</td>
+     <td>
+         
+        <ul class="nav">
+                    <li>
+                        <a href="{{ path('WebCompanyBundle_show_company', { 'id': empresa.id }) }}"><i class="icon-list"></i> Details</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('WebCompanyBundle_editar_company', { 'id': empresa.id }) }}"><i class="icon-edit"></i> Edit</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('WebCompanyBundle_delete_company', { 'id': empresa.id }) }}"><i class="icon-remove"></i> Remove</a>
+                    </li>
+                </ul>
+    </td>
+    </tr>
+    {% endfor %}
+    </tbody>
+    </table>
+</div>
+{% endblock %}

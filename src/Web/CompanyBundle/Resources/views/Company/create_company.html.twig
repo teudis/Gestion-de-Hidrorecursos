@@ -1,0 +1,61 @@
+{# src/Dev/SkillsBundle/Resources/views/layout.html.twig #}
+
+{% extends "::frontend.html.twig" %}
+
+{% block id 'compania' %}
+{% block title %}Crear Empresa{% endblock %}
+{% block nav %}
+{% include ':includes:destacada.html.twig' %}
+{% endblock%}
+
+{% block article %}
+<div class="portada">
+{% if app.session.hasFlash('info') %}
+                       
+ <p class="btn btn-success">{{ app.session.getFlash('info') }}</p>
+ 
+{% endif %} 
+<form action="{{ path('WebCompanyBundle_crear_company') }}" method="post" {{ form_enctype(formulario) }}>
+    <div class="errors">
+    {{ form_errors(formulario) }}
+    </div>
+         <fieldset>
+            <legend>{% trans %}Datos de la Empresa{% endtrans %}</legend>
+            
+            {{ form_row(formulario.name) }}
+            {{ form_row(formulario.country) }}
+            <div class="row-fluid">
+                <div class="span2" style="width: 140px;"><strong>{{ form_label(formulario.created, 'Fecha de creada') }}</strong></div>                
+                <div class="span6"><span>{{ form_widget(formulario.created) }}</span></div>
+            </div>
+
+
+            {{ form_row(formulario.description) }}
+            {{ form_row(formulario.address) }}
+            {{ form_row(formulario.typeofproducts) }}
+        </fieldset>
+        <fieldset>
+            <legend>{% trans %}Contacto{% endtrans %}</legend>
+            {{ form_row(formulario.email) }}
+            {{ form_row(formulario.web_site) }}
+        </fieldset>
+        
+        
+        {{ form_rest(formulario) }}  
+        
+    <input class="btn btn-primary" type="submit" value="{% trans %}Crear Empresa{% endtrans %}" />
+</form>
+    </div>
+{% endblock %}
+
+ {% block javascripts %}
+<script type="text/javascript">
+    //    $('select').click(function(){alert('testing...')});
+        
+          $("#web_companybundle_companytype_created_day").addClass("input-mini");
+          $("#web_companybundle_companytype_created_month").addClass("input-mini");
+          $("#web_companybundle_companytype_created_year").addClass("input-small");
+   
+
+</script>
+{% endblock %}

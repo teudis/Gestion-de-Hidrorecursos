@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>{% block title %}{% endblock %} | HidroRecursos</title>
+      <!--  <link href="{#{asset('bundles/webcompany/css/bootstrap.css')}#}" rel="stylesheet" type="text/css">    -->       
+          <link href="{{asset('bundles/webcompany/css/bootstrap.min.css')}}" rel="stylesheet" type="text/css">
+        {% block stylesheets %}
+           
+        {% endblock %}
+    </head>
+    <body id="{% block id '' %}"><div>
+        {% block body %}{% endblock %}
+     <footer>
+         &copy; {{ 'now' | date('Y') }} - HidroRecursos 
+        <a href="{{ path('WebCompanyBundle_estatica', {'pagina': 'quienes-somos'}) }}">Quienes somos</a>
+        <a href="{{ path('WebCompanyBundle_estatica', {'pagina': 'objetivo'}) }}">Objetivo</a>
+        <a href="{{ path('WebCompanyBundle_estatica', {'pagina': 'mision'}) }}">Misión</a>
+        <a href="{{ path('WebCompanyBundle_estatica', {'pagina': 'acerca-de'}) }}">Acerca de</a>
+    </footer>
+        {% block javascripts %}{% endblock %}
+       </div>
+    </body>
+</html>

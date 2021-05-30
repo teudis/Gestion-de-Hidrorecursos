@@ -1,0 +1,25 @@
+<div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 id="myModalLabel">{{ 'layout.titulo'| trans({}, 'FOSUserBundle') }}</h4>
+    </div>
+    <div class="modal-body">
+<form class="form-signin" action="{{path('fos_user_security_check') }}" method="post">
+    <h4 class="form-signin-heading">{{ 'layout.formulario'| trans({}, 'FOSUserBundle') }}</h4>
+    <input type="text" class="input-block-level" placeholder="{{ 'security.login.username'|trans({}, 'FOSUserBundle') }}" id="username" name="_username">
+    <input id="aa" type="password" class="input-block-level" placeholder="{{ 'security.login.password'|trans({}, 'FOSUserBundle') }}" id="password" name="_password">
+    <label class="checkbox">
+      <input type="checkbox" id="no_cerrar" name="_remember_me" checked> {{ 'security.login.remember_me'|trans({}, 'FOSUserBundle') }}
+    </label>
+    <button class="btn btn-medium btn-primary" id="validar" type="submit">{% trans %}Acceder{% endtrans %}</button>
+    <br/>  <br/>
+    <a href="{{ path('WebCompanyBundle_resseting') }}">Did you forget your password?</a>
+</form>
+
+
+    </div>
+</div>
+
+
+
+

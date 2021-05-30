@@ -1,0 +1,215 @@
+/*!
+*   HidroRecursos
+*   Copyright 2012  EasyCompany.A9BFCB;7095A9;
+*/
+.cuerpo{border: 1px solid #7095A9;background-color: #75aac6;/*background-image: url('../images/Page-BgSimpleGradient.jpg');*//*d5e0e3*/
+	background-repeat: no-repeat; padding: 10px; /*border: 1px solid transparent;*/
+        -webkit-border-radius:6px;-moz-border-radius:6px;
+          border-radius:6px}
+.portada{clear: both;padding:10px;border: 1px solid #7095A9;margin-bottom:30px;font-size:14px;font-weight:200;line-height:20px;
+          color:inherit;background-color:#e4ebef;-webkit-border-radius:6px;-moz-border-radius:6px;
+          border-radius:6px;}/*#e2eaee e4ebef*/
+
+.portada h1{margin-bottom:10px;font-size:20px;line-height:1;color:inherit;letter-spacing:-1px;}
+.portada li{line-height:30px;}
+.portada p{text-align: justify; width: 100%;}
+
+/*.foto-portada{width: 40%;}
+.foto-portada img{width: 300px; height: 240px;-webkit-border-radius:4px;-moz-border-radius:4px;
+          border-radius:4px;}*/
+/*.texto-portada{width: 55%;}*/
+.offset-corto{margin-left: 50px;}
+
+.mover{margin-left: 50px;}
+
+.mover-izq{margin-left: -300px;}
+.portada-der{float: right;}
+
+/* modificando el footer */
+footer {
+    color: #000;
+    border-top: 1px solid #CCC;
+    font-size: 13px;
+    padding: 1em;
+    position: relative;
+}
+
+footer a {
+    color: #1f3a48;
+    padding: 0 1em;
+}
+footer:hover a {
+    color: #11C;
+}
+
+/* estilo del formulari de login */
+.form-signin {
+    max-width: 300px;
+    padding: 19px 29px 29px;
+    margin: 0 auto 20px;
+    background-color: #fff;
+    border: 1px solid #e5e5e5;
+    -webkit-border-radius: 5px;
+       -moz-border-radius: 5px;
+            border-radius: 5px;
+    -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+       -moz-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+            box-shadow: 0 1px 2px rgba(0,0,0,.05);
+}
+.form-signin .form-signin-heading,
+.form-signin .checkbox {
+    margin-bottom: 10px;
+}
+.form-signin input[type="text"],
+.form-signin input[type="password"] {
+    font-size: 16px;
+    height: auto;
+    margin-bottom: 15px;
+    padding: 7px 9px;
+}
+
+form label {
+    display: inline-block;
+    font-weight: bold;
+    width: 160px;    
+    font-size: 12px;    
+}
+/* cuerpo de la portada */
+body {
+    padding-top: 60px;
+    padding-bottom: 40px;
+    padding-left: 80px;
+    padding-right: 80px 
+}
+.sidebar-nav {
+    padding: 9px 0;
+}
+
+.error1{
+    background-color: #bc1010;
+    padding: 6px 12px;
+    border-radius: 4px;
+    color: white;
+    font-weight: bold;
+    margin-left: 16px;
+    margin-top: 6px;
+    position: absolute;
+}
+
+.error1:before{
+    content: '';
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid transparent;
+    border-right: 8px solid #bc1010;
+    border-left: 8px solid transparent;
+    left: -16px;
+    position: absolute;
+    top: 5px;
+}
+
+.patrocinadores{
+    margin-bottom: 15px;
+    margin-top: 15px;
+    margin-left: 60px;
+}
+
+.input-minimore
+{   width:30px;
+    text-align: center;
+}
+
+.form-search1 .input-prepend .search-query{
+    -webkit-border-radius:0 14px 14px 0;-moz-border-radius:0 14px 14px 0;border-radius:0 14px 14px 0; margin-top: 5px;}
+
+.navbar1{overflow:visible;margin-bottom:20px;color:#777777;*position:relative;*z-index:2;}
+.navbar1-inner{min-height:40px;padding-left:20px;padding-right:20px;background-color:#fafafa;
+             background-image:-moz-linear-gradient(top, #ffffff, #f2f2f2);
+             background-image:-webkit-gradient(linear, 0 0, 0 100%, from(#ffffff), to(#f2f2f2));
+             background-image:-webkit-linear-gradient(top, #ffffff, #f2f2f2);
+             background-image:-o-linear-gradient(top, #ffffff, #f2f2f2);
+             background-image:linear-gradient(to bottom, #ffffff, #f2f2f2);
+             background-repeat:repeat-x;
+             filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff', endColorstr='#fff2f2f2', GradientType=0);
+             border:1px solid #d4d4d4;-webkit-border-radius:4px;-moz-border-radius:4px;border-radius:4px;
+             -webkit-box-shadow:0 1px 4px rgba(0, 0, 0, 0.065);-moz-box-shadow:0 1px 4px rgba(0, 0, 0, 0.065);
+             box-shadow:0 1px 4px rgba(0, 0, 0, 0.065);*zoom:1;}.navbar-inner:before,.navbar-inner:after{display:table;content:"";
+                   line-height:0;}
+.navbar1-inner:after{clear:both;}
+.navbar1 .container{width:auto;}
+
+.muvright{margin-left: 420px;}
+.muvright1{margin-left: 550px;}
+
+/*.navnuevo{
+    clear: both;
+    width: 100%;
+}
+
+.navnuevo li{
+    inline-box-align: 1;
+}*/
+
+div.libro {
+    border: 1px solid #7C7C7C;
+    margin-bottom: 3px;
+    padding: 0px 1px 0px 1px;
+    -webkit-border-radius:2px;-moz-border-radius:2px;border-radius:2px;    
+}
+div.imglibro {
+    position: relative;
+    float: left;
+    margin: 5px;
+    padding: 10px;
+}
+div.imglibro img{
+    height: 150px;
+    width: 80px;
+}
+div.libro p {
+    margin-right: 4px;
+    margin-left: 6px;
+    /*float: left;*/
+    text-align: justify !important;
+    width: 90%;
+}
+div.libro a {
+    margin-left:6px;
+}
+
+div.clear{
+    clear: both;
+}
+
+div.separador{
+    border-top: 1px solid #7C7C7C;
+}
+
+
+ul.menulibro{
+    clear: both;
+    width: 100%;
+    list-style: none;
+    float: left;
+    margin: 0;
+    padding: 0;
+/*    border-left: 1px solid #7C7C7C;*/
+}
+
+ul.menulibro li{
+    float: left;
+}
+
+ul.menulibro li a{
+    padding: .3em;
+    /*background: url("../images/fondose.png") repeat;*/
+    display:block;
+    text-decoration: none;
+    color: #333;/*
+    border-top: 1px solid #7C7C7C;*/
+    border-right: 1px solid #7C7C7C;
+/*    border-bottom: 1px solid #9C9C9C;*/
+}
+
+p { 
+    text-align: justify;
+}

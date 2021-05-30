@@ -1,0 +1,82 @@
+{% extends "::frontend.html.twig" %}
+{% block title %} {% trans %}Las mejores empresas del mundo{% endtrans %} {% endblock %}
+{%block id 'portada'%}
+ {% block nav %} 
+{% include ':includes:destacada.html.twig' %}
+{%endblock%}   
+        
+{% block article %} 
+
+<div class="portada">
+    <h1>Company's featured </h1>
+    {% for empresadestacada in destacada %}
+     <div class="libro">
+
+       
+        <h4><a href="{{ is_granted("IS_AUTHENTICATED_REMEMBERED") ? 
+        path('WebCompanyBundle_show_company_all',{ 'id': empresadestacada.id }) :
+        path ('WebCompanyBundle_registro') 
+        }}">{{ empresadestacada.name }}</a></h4>
+        <p> {{ empresadestacada.description | truncate(300, true) }}</p>
+        <div class="clear"></div>
+        <div class="separador">
+            <ul class="menulibro">
+                <li><a href="{{ is_granted("IS_AUTHENTICATED_REMEMBERED") ? 
+        path('WebCompanyBundle_show_company_all',{ 'id': empresadestacada.id }) :
+        path ('WebCompanyBundle_registro') 
+        }}"><i class="icon-globe"></i>Read Online</a></li>
+        <!--Comentariado
+                    <li><a href="#"><i class="icon-book"></i>Read PDF</a></li>
+                    <li><a href="#"><i class="icon-globe"></i>Read TXT</a></li>
+                    <li><a href="#"><i class="icon-globe"></i>Read EXCEL</a></li>
+                    -->
+            </ul>
+                <div class="clear"></div>
+        </div>
+    </div>
+    {% endfor %}
+
+
+
+
+    
+    {% set incide = indice | default(0) %}
+    {% set cant = (cantidadEmp // cant_fija) + 1 %}
+    {% set previous = (indice - cant_fija) / 5 %}
+    {% set next = (indice + cant_fija) / 5 %}    
+    <ul class="pager">
+        <li class="previous {{  (indice <= 0) ? 'disabled' : '' }}">            
+            <a href="{{(indice <= 0) ? '' : path('WebCompanyBundle_portada', {'indice': previous})}}">&larr; Prev</a>
+        </li>
+        <li>
+            <input id="indice_paginar" class="input-minimore search-query" style="height: 25px;border: 1px;" type="text" value="{{ next -1 }}"> of {{ cant - 1 }} page
+            <a id="paginar" href="" >... go</a>
+        </li>
+        <li class="next {{ (cant <= next) ? 'disabled' : '' }}">           
+            <a href="{{(cant <= next) ? '' : path('WebCompanyBundle_portada', {'indice': next})}}">Next &rarr;</a>
+        </li>
+    </ul>
+</div>    
+<script type="text/javascript">
+  //obtener informacion de la vista 
+   
+   
+   $('#paginar').on({'click': function(){       
+       var page = $('#indice_paginar').val();
+       var dir = "{{path('WebCompanyBundle_portada', {'indice': ''})}}" + '/' + page;
+       $('#paginar').attr('href', dir);
+   },
+   'mouseover': function(){
+       var page = $('#indice_paginar').val();
+       var dir = "{{path('WebCompanyBundle_portada', {'indice': ''})}}" + '/' + page;
+       $('#paginar').attr('href', dir);
+}
+  
+});
+
+    </script>
+{% endblock %}
+
+      
+
+  

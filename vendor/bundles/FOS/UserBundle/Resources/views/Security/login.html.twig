@@ -1,0 +1,63 @@
+{% extends "::frontend.html.twig" %}
+{% block nav_superior %}{% endblock %}
+{% block nav %}{% endblock %}
+{% block title%}Entre como usuario{%endblock%}
+
+{% block fos_user_content %}
+
+<div class="mover-izq">
+    <form class="form-signin" action="{{path('fos_user_security_check')}}" method="post">
+{% if error %}
+        <div class="alert alert-error">{{ 'layout.error'|trans({}, 'FOSUserBundle') }}</div>
+{% endif %}
+    <h4 class="form-signin-heading">{{ 'layout.formulario'| trans({}, 'FOSUserBundle') }}</h4>
+    <input id="usuario" type="text" class="input-block-level" placeholder="{{ 'security.login.username'|trans({}, 'FOSUserBundle') }}" id="username" name="_username" value="{{ last_username }}">
+    <input id="contrasena" type="password" class="input-block-level" placeholder="{{ 'security.login.password'|trans({}, 'FOSUserBundle') }}" id="password" name="_password">
+
+    <label class="checkbox">
+      <input type="checkbox" id="no_cerrar" name="_remember_me" checked> {{ 'security.login.remember_me'|trans({}, 'FOSUserBundle') }}
+    </label>
+    <button id="val" type="submit" class="btn btn-medium btn-primary" >{% trans %}Acceder{% endtrans %}</button>
+    <br/> <br/>
+    <a href="{{ path('WebCompanyBundle_resseting') }}">Did you forget your password?</a>
+</form>
+
+</div>
+{% endblock fos_user_content %}
+
+ {% block javascripts %}
+<script type="text/javascript">
+    $(document).ready(function(){
+    $('#val').click(function(){
+        $('.error1').remove();
+        if($('#usuario').val() == '')
+        {
+            $('#usuario').focus().after("<small class='error1'>No debe dejar campos vacios</small>");
+            return false;
+        }
+        else if($('#contrasena').val() == '')
+        {
+            $('#contrasena').focus().after("<small class='error1'>No debe dejar campos vacios</small>");
+            return false;
+        }
+});
+
+  $('#usuario').keyup(function(){
+    if($(this).val() != null)
+        {
+            $('.error1').fadeOut();
+            return false;
+        }
+});  
+
+$('#contrasena').keyup(function(){
+    if($(this).val() != null)
+        {
+            $('.error1').fadeOut();
+            return false;
+        }
+});
+});
+
+</script>
+{% endblock %}

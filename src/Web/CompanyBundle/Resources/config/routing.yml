@@ -1,0 +1,97 @@
+WebCompanyBundle_homepage:
+    pattern:  /
+    defaults: { _controller: WebCompanyBundle:Frontend:portada }
+WebCompanyBundle_contact:
+    pattern:  /contact/
+    defaults: { _controller: WebCompanyBundle:Default:contact }
+    requirements:
+        _method: GET|POST
+WebCompanyBundle_directorio:
+    pattern:  /directorio/
+    defaults: { _controller: WebCompanyBundle:Default:directorio }
+WebCompanyBundle_registro:
+    pattern:  /register/
+    defaults: { _controller: WebCompanyBundle:Registration:register }
+    requirements:
+        _method: GET|POST
+WebCompanyBundle_perfil:
+    pattern:  /profile/
+    defaults: { _controller: WebCompanyBundle:Profile:profile }
+    requirements:
+        _method: GET|POST
+WebCompanyBundle_crear_company:
+    pattern:  /crear_company/
+    defaults: { _controller: WebCompanyBundle:Company:createcompany }
+    requirements:
+        _method: GET|POST
+        
+WebCompanyBundle_listado_company:
+    pattern:  /listado_company/
+    defaults: { _controller: WebCompanyBundle:Company:listado }
+    
+WebCompanyBundle_editar_company:
+    pattern:  /{id}/editar_company/
+    defaults: { _controller: WebCompanyBundle:Company:editcompany }
+WebCompanyBundle_show_company:
+    pattern:  /{id}/show_company/
+    defaults: { _controller: WebCompanyBundle:Company:showcompany }
+WebCompanyBundle_update_company:
+    pattern:  /{id}/update_company/
+    defaults: { _controller: WebCompanyBundle:Company:updatecompany }
+    requirements:
+        _method: POST
+WebCompanyBundle_delete_company:
+    pattern:  /{id}/delete_company/
+    defaults: { _controller: WebCompanyBundle:Company:deletecompany }
+    requirements:
+        _method: GET
+WebCompanyBundle_search_pais:
+    pattern:  /pais/{id}/
+    defaults: { _controller: WebCompanyBundle:Default:searchcountry }
+WebCompanyBundle_show_company_all:
+    pattern:  /{id}/show_company_all/
+    defaults: { _controller: WebCompanyBundle:Default:show_company }
+WebCompanyBundle_search_letra:
+    pattern:  /nombres/{letter}/
+    defaults: { _controller: WebCompanyBundle:Company:searchletter }
+WebCompanyBundle_search_name:
+    pattern:  /empresas/
+    defaults: { _controller: WebCompanyBundle:Company:searchname }
+    requirements:
+        _method: POST
+ 
+WebCompanyBundle_estatica:
+    pattern: /sitio/{pagina}
+    defaults: { _controller: WebCompanyBundle:Sitio:estatica }    
+    
+WebCompanyBundle_categoria:
+    pattern:  /categoria/
+    defaults: { _controller: WebCompanyBundle:Default:categoria }
+    
+WebCompanyBundle_allcompany:
+    pattern:  /allcompany/
+    defaults: { _controller: WebCompanyBundle:Default:allcompany }
+    
+WebCompanyBundle_allcompany_page:
+    pattern:  /allcompany/page/{indice}
+    defaults: { _controller: WebCompanyBundle:Default:allcompany }
+    
+WebCompanyBundle_search_product:
+    pattern:  /product/{id}
+    defaults: { _controller: WebCompanyBundle:Company:searchproduct } 
+    
+WebCompanyBundle_portada:
+    pattern:  /page/{indice}
+    defaults: { _controller: WebCompanyBundle:Frontend:portada } 
+WebCompanyBundle_resseting:
+    pattern:  /resseting/
+    defaults: { _controller: WebCompanyBundle:Resetting:request }
+    requirements:
+        _method: GET|POST
+WebCompanyBundle_search_letter_categetory:
+    pattern:  /categories/{letter}/
+    defaults: { _controller: WebCompanyBundle:Company:lettercategetory }
+WebCompanyBundle_message_company:
+    pattern:  /empresas/
+    defaults: { _controller: WebCompanyBundle:Company:message_company }
+

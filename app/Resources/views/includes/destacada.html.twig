@@ -1,0 +1,53 @@
+{% block nav %} <div class="">
+          <div class="well sidebar-nav">
+          <ul class="nav nav-list">
+          <li class="nav-header">Search</li>  
+     
+    <form class="form-search" action="{{ path('WebCompanyBundle_search_name') }}" method="post">
+    <div class="input-append">
+    <input type="text" class="span8 search-query" placeholder="Enter company..." name="nombre">
+    <button type="submit" class="btn">Search</button>
+    </div>   
+    </form>
+
+
+
+          </ul>
+            <ul class="nav nav-list">
+        
+              <li class="nav-header">HidroRecursos</li>  
+              <li>
+                  
+                   {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                 <a  href="{{ path ('WebCompanyBundle_allcompany')}}">
+              <span class="label label-success">Click here to Get List!</span>
+                 </a>
+                  
+                 {% else %}
+                  <a  href="{{  path ('WebCompanyBundle_registro')}}">
+              <span class="label label-success">Click here to Get List!</span>
+                 </a>
+                  {%endif%}
+                  
+                  
+              </li>
+              {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                <li class="nav-header">{% trans %}Mi Cuenta{% endtrans %}</li>
+                <li> <a href="{{ path ('WebCompanyBundle_perfil')}}">{% trans %}Mi Perfil{% endtrans %}</a></li>
+                <li class="nav-header">Empresas</li>
+                <li><a href="{{ path('WebCompanyBundle_crear_company') }}">{%trans %}Crear Empresas{% endtrans %}</a></li>
+                <li><a href="{{ path('WebCompanyBundle_listado_company')}}">{%trans %}Listado Empresas{% endtrans %}</a></li>                 
+              
+              {% endif %}
+              <li class="nav-header">Empresas destacadas</li>
+              {% for t in top %}             
+              <li><a style="color:#0055cc; font-size: 14px;"  href="{{ path('WebCompanyBundle_show_company_all', { 'id': t.id }) }}"> 
+    {{ t.name }}</a> </li>
+                           
+              {%endfor%}
+              <li class="nav-header">Search by </li>
+              <li><a href="{{path('WebCompanyBundle_categoria')}}">Company Category</a></li>            
+
+            </ul>
+          </div><!--/.well -->
+        {% endblock %}
